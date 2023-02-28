@@ -10,9 +10,9 @@ app.use(helmet());
 app.use(compression());
 
 //---init db
-
+require("./dbs/mongodb")
 //---init routes
-app.get('/', (req, res,next) => {
+app.get('/test-compression', (req, res,next) => {
     const strCompress = "Namdv";
     res.status(200).json({
         message: 'Hello namdv!',
