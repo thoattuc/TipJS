@@ -11,8 +11,9 @@ app.use(compression());
 
 //---init db
 require('./dbs/init.mongodb');
-const {countConnect} = require('./helper/check.connect');
-countConnect()
+const {countConnect, overLoad} = require('./helper/check.connect');
+countConnect();
+overLoad();
 
 
 //---init routes
