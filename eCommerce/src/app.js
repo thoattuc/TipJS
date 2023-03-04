@@ -11,7 +11,8 @@ app.use(compression());
 
 //---init db
 require('./dbs/init.mongodb');
-
+const {countConnect} = require('./helper/check.connect');
+countConnect()
 
 
 //---init routes

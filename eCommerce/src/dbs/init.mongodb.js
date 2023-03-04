@@ -1,22 +1,20 @@
 'use strict'
 
-const mongoose = require("mongoose")
-
-// const mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 // const connectionString = mongoose.connect('mongodb://localhost:27017/eshop')
 //     .then(_ => console.log('Connected Database'))
-//     .catch(err => console.log('Error Connect'));
+//     .catch(err => console.log('Error Connect', err));
 
 // //dev
-// if (1 === 0) {
+// if (1 === 1) {
 //     mongoose.set('debug', true)
 //     mongoose.set('debug', { color: true })
 // }
 
 // module.exports = mongoose
 
-const connectionString = 'mongodb://localhost:27017/eshop'
+const connectionString = 'mongodb://127.0.0.1:27017/eshop'
 
 class Database {
     constructor() {
@@ -35,7 +33,6 @@ class Database {
     }
 
     //chi khoi tao mot ket noi:
-
     static getInstance() {
         if(!Database.instance){
             Database.instance = new Database();
@@ -46,4 +43,4 @@ class Database {
 
 const instanceMongodb = Database.getInstance()
 
-module.exports = instanceMongodb;
+module.exports = instanceMongodb; //export method
