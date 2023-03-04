@@ -10,7 +10,10 @@ app.use(helmet());
 app.use(compression());
 
 //---init db
-require("./dbs/mongodb")
+require('./dbs/init.mongodb');
+
+
+
 //---init routes
 app.get('/test-compression', (req, res,next) => {
     const strCompress = "Namdv";
